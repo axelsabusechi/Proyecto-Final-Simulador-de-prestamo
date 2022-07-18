@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Prestamos</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/8e3afbb123.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-warning ">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" alt="" />
+                <strong>TuPrestamoYa</strong>
+            </a>
+        </nav>
+        <br>
+    </header>
+
+    <main>
+        <section id="ingreso">
+            <div class="container">
+                <h1>Simulá tu Préstamo</h1>
+                <h3>Elegí la opción que mejor se adapte a tu bolsillo</h3>
+            </div>
+            <br>
+            <div class="container contacto">
+                <div id="contactomensaje" style="display: none">
+                    <h3 class="correcto">¡Gracias por contactarse con nosotros!</h3>
+                    <h3 class="error">
+                        Ups! Ocurrió un error. Vuelva a intentarlo por favor.
+                    </h3>
+                </div>
+                <!-- <form> -->
+                <div class="form-group">
+                    <label for="monto" class="label-contacto">Monto Solicitado</label>
+                    <input type="number" class="form-control form-control-lg wow fadeInUp" id="monto"
+                        placeholder="$0.00" name="monto" aria-describedby="montoHelpInline" required max="2000000" />
+                    <small id="montoHelpInline" class="text-muted">
+                        Monto máximo del préstamo $ 2.000.000
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="moneda" class="label-contacto">Moneda</label>
+                    <select class="form-control wow fadeInUp" data-wow-duration="1s" id="moneda"
+                        placeholder="Elegí la moneda" name="moneda">
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="plazo" class="label-contacto">Plazo en meses</label>
+                    <select class="form-control wow fadeInUp" data-wow-duration="1s" id="plazo"
+                        placeholder="Elegí el plazo" name="plazo" aria-describedby="plazoHelpInline">
+
+                    </select>
+                    <small id="plazoHelpInline" class="text-muted">
+                        Máximo 60 meses.
+                    </small>
+                </div>
+
+                <button id="simular" type="submit" class="btn btn-warning btn-formato" data-loading-text="Simulando..."
+                    data-normal-text="Simular">
+                    <strong>Simular</strong>
+                </button>
+
+                <!-- </form> -->
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <section id="detalle">
+            <div class="container">
+                <h5>Detalle de tu préstamo</h5>
+                <table class="table table-striped" id="grilla">
+                    <thead>
+                        <!-- <tr>
+                            <th scope="col">N° Cuota</th>
+                            <th scope="col">Monto Cuota</th>
+                            <th scope="col">Capital</th>
+                            <th scope="col">Interes</th>
+                            <th scope="col">Capital Adeudado</th>
+                        </tr> -->
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <br>
+    <br>
+    <br>
+    <footer class="footer--formato">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fas fa-map-marker-alt footer-icono"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="footer--p--font">Av. San Martin 912
+                                <br>
+                                CP: C1430AAD Saavedra
+                                <br>
+                                CABA - Buenos Aires - Argentina
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fas fa-phone-alt footer-icono"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="footer--p--font">+54 11 4710-1253 (Líneas Rotativas)</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fab fa-whatsapp footer-icono"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="footer--p--font">+54 11 1558501903</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fas fa-envelope footer-icono"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="footer--p--font">info@tuprestamoya.com.ar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <!-- <div class="row"> -->
+                    <h6 class="footer__h6--font">Ventas</h6>
+                    <hr class="footer-separador1">
+                    <!-- </div> -->
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fas fa-envelope footer-icono"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="footer--p--font">prestamos@tuprestamoya.com.ar</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fas fa-envelope footer-icono"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="footer--p--font">consultas@tuprestamoya.com.ar</p>
+                        </div>
+                    </div>
+                    <!-- <div class="row"> -->
+                    <h6 class="footer__h6--font">Administración</h6>
+                    <hr class="footer-separador2">
+                    <!-- </div> -->
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fas fa-envelope footer-icono"></i>
+                        </div>
+                        <div class="col-10">
+                            <p class="footer--p--font">administracion@tuprestamoya.com.ar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <div class="row justify-content-center">
+                        <img src="img/logo.png" alt="logo-footer" id="logo-footer">
+                    </div>
+                    <div class="row justify-content-center">
+                        <a href="#" class="href"><i class="fab fa-facebook-f footer-iconos-redes"></i></a>
+                        <a href="#" class="href"><i class="fab fa-instagram footer-iconos-redes"></i></a>
+                        <a href="#" class="href"><i class="fab fa-twitter footer-iconos-redes"></i></a>
+                        <a href="#" class="href"><i class="fab fa-youtube footer-iconos-redes"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+
+</html>
